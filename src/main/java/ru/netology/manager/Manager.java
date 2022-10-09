@@ -20,7 +20,7 @@ public class Manager {
     }
 
     public Product[] searchById(int id) {
-        return repository.findById(id);
+            return repository.findById(id);
     }
     public Product[] removeById(int id) throws NotFoundException {
         return repository.removeById(id);

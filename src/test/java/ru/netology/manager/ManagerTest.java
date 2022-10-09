@@ -135,7 +135,7 @@ class ManagerTest {
     }
 
     @Test
-    public void shouldThrowNotFoundException() {
+    public void shouldThrowNotFoundExceptionRemoveById() {
         assertThrows(NotFoundException.class, () -> manager.removeById(3535));
     }
 }

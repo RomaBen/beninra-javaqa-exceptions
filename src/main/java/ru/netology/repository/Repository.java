@@ -33,10 +33,16 @@ public class Repository {
                 result = tmp;
             }
         }
+        if (result.length == 0) {
+            return null;
+        }
         return result;
     }
 
     public Product[] removeById(int id) throws NotFoundException {
+        if (findById(id) == null) {
+            throw new NotFoundException("This id is not existing!");
+        }
         int length = products.length - 1;
         Product[] tmp = new Product[length];
         int index = 0;
@@ -44,9 +50,6 @@ public class Repository {
             if(product.getId() != id) {
                 tmp[index] = product;
                 index++;
-                if (index >= length) {
-                    throw new NotFoundException("Can't delete that is not exist!");
-                }
             }
             products = tmp;
         }
