@@ -41,7 +41,7 @@ public class Repository {
 
     public Product[] removeById(int id) throws NotFoundException {
         if (findById(id) == null) {
-            throw new NotFoundException("This id is not existing!");
+            throw new NotFoundException("Product with id: " + id + " is not found!");
         }
         int length = products.length - 1;
         Product[] tmp = new Product[length];
