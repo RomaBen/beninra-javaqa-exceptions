@@ -1,5 +1,6 @@
 package ru.netology.manager;
 
+import ru.netology.exception.NotFoundException;
 import ru.netology.product.Product;
 import ru.netology.repository.Repository;
 
@@ -18,6 +19,12 @@ public class Manager {
         return repository.findAll();
     }
 
+    public Product[] searchById(int id) {
+        return repository.findById(id);
+    }
+    public Product[] removeById(int id) throws NotFoundException {
+        return repository.removeById(id);
+    }
 
     public Product[] searchByText(String text) {
         Product[] result = new Product[0];
